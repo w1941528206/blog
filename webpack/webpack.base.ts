@@ -24,27 +24,28 @@ const bascConfig = {
             options: {
               // 逆序执行
               presets: [
-                "@babel/preset-env",
+                '@babel/preset-env',
                 // 解析jsx语法
                 [
-                  "@babel/preset-react",
+                  '@babel/preset-react',
                   {
                     runtime: 'automatic', // 无需引入react
                   },
                 ],
                 // 解析ts语法
-                "@babel/preset-typescript",
+                '@babel/preset-typescript',
               ],
-              "plugins": [
+              plugins: [
                 [
-                  "import", {
-                    "libraryName": "antd",
-                    "style": "css"
-                  }
-                ]
-              ]
+                  'import',
+                  {
+                    libraryName: 'antd',
+                    style: 'css',
+                  },
+                ],
+              ],
             },
-          }
+          },
         ],
         exclude: /node_modules/,
       },
@@ -53,10 +54,11 @@ const bascConfig = {
         type: 'asset',
         parser: {
           dataUrlCondition: {
-            maxSize: 200 * 1024
-          }
-        }
+            maxSize: 200 * 1024,
+          },
+        },
       },
+      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
       // {
       //   test: /.(png|jpg|gif|jpeg|svg)$/,
       //   use: [
@@ -74,16 +76,16 @@ const bascConfig = {
       //     }
       //   ]
       // }
-    ]
+    ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: ['.tsx', '.ts', '.js'],
     alias: {
       '@src': path.resolve(cwd, 'src/'),
       '@pages': path.resolve(cwd, 'src/pages'),
       '@assets': path.resolve(cwd, 'src/assets'),
-      '@components': path.resolve(cwd, 'src/components')
-    }
+      '@components': path.resolve(cwd, 'src/components'),
+    },
   },
   plugins: [
     // new ProgressBarWebpackPlugin(),
@@ -92,7 +94,7 @@ const bascConfig = {
     // }),
     // new FriendlyErrorsWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: './public/index.html',
     }),
   ],
   stats: 'errors-only',

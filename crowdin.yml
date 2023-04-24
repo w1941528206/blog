@@ -1,0 +1,9 @@
+'project_id': 
+'api_token': 
+'files':
+  [
+    {
+      'source': 'locales/user-insight.json',
+      'translation': 'locales/translations/%two_letters_code%/%original_file_name%',
+    },
+  ]
