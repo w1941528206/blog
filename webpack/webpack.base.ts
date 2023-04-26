@@ -58,7 +58,7 @@ const bascConfig = {
           },
         },
       },
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+      // { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
       // {
       //   test: /.(png|jpg|gif|jpeg|svg)$/,
       //   use: [
