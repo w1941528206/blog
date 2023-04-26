@@ -16,7 +16,7 @@ export const App = () => {
       <React.Suspense fallback={null}>
         <BrowserRouter>
           <Routes>
-            <Route path="/foo" element={123} />
+            <Route path="/" element={123} />
           </Routes>
         </BrowserRouter>
       </React.Suspense>
