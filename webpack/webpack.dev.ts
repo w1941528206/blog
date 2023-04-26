@@ -5,9 +5,7 @@ import bascConfig from './webpack.base';
 
 const devConfig = {
   mode: 'development',
-  plugins: [
-    new ReactRefreshWebpackPlugin()
-  ],
+  plugins: [new ReactRefreshWebpackPlugin()],
   module: {
     rules: [
       // 解决使用css modules时antd样式不生效
@@ -22,11 +20,18 @@ const devConfig = {
             loader: 'less-loader',
             options: {
               lessOptions: {
-                javascriptEnabled: true
-              }
-            }
-          }
-        ]
+                javascriptEnabled: true,
+                strictMath: false,
+              },
+              lessLoaderOptions: {
+                lessOptions: {
+                  javascriptEnabled: true,
+                  strictMath: false,
+                },
+              },
+            },
+          },
+        ],
       },
       {
         test: /.(less|css)$/,
@@ -44,22 +49,22 @@ const devConfig = {
             options: {
               modules: {
                 mode: 'local',
-                localIdentName: '[name]__[local]--[hash:base64:5]'
-              }
-            }
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+              },
+            },
           },
           {
             loader: 'less-loader',
             options: {
               lessOptions: {
-                javascriptEnabled: true
-              }
-            }
-          }
+                javascriptEnabled: true,
+              },
+            },
+          },
         ],
         sideEffects: true, // package 中 sideEffects 设置为 false 后 所有文件都会被 Tree Shaking 通过 import 引入的 css 会被当作无用代码 这里 true 告诉 webpack 不要 shaking 掉
       },
-    ]
+    ],
   },
   devServer: {
     // contentBase: '../dist',
@@ -68,8 +73,8 @@ const devConfig = {
     compress: true,
     hot: true,
     historyApiFallback: {
-      disableDotRule: true // 解决 history 刷新404问题
-    }
+      disableDotRule: true, // 解决 history 刷新404问题
+    },
   },
   devtool: 'cheap-source-map',
 };
