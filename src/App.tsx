@@ -5,16 +5,20 @@ import { IntlProvider } from 'react-intl';
 import { locales } from '../locales';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './layout';
-import Page from './Page';
+// import Page from './Page';
 const defaultLocal = 'zh-CN';
 
 export const App = () => {
   const locale = localStorage.getItem('locale') ?? defaultLocal;
   const messages = React.useMemo(() => locales[locale], [locale]);
 
+  const Loading = () => <span>loading...</span>
+
+  const Page = React.lazy(() => import('./Page'));
+
   return (
     <IntlProvider locale={locale} messages={messages} defaultLocale={defaultLocal}>
-      <React.Suspense fallback={null}>
+      <React.Suspense fallback={<Loading />}>
         <Layout>
           <BrowserRouter>
             <Routes>
