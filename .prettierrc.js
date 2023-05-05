@@ -35,7 +35,13 @@ module.exports = {
   // 换行符使用 lf
   endOfLine: 'lf',
   //@trivago/prettier-plugin-sort-imports config
-  importOrder: ['react', '<THIRD_PARTY_MODULES>', '^@gio-design/(.*)$', '^@/(.*)$', '^[./]'],
+  importOrder: [
+    'react',
+    '<THIRD_PARTY_MODULES>',
+    '^@gio-design/(.*)$',
+    '^@/(.*)$',
+    '^[./]',
+  ],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
 };

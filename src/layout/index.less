@@ -1,10 +1,14 @@
+.app {
+  background: #f0f2f5;
+}
+
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: rgba(255, 255, 255, 0.8);
   padding: 20px 30px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0rem 0.25rem 0.375rem -0.0625rem, rgba(0, 0, 0, 0.06) 0rem 0.125rem 0.25rem -0.0625rem;;
+  box-shadow: rgba(0, 0, 0, 0.1) 0rem 0.25rem 0.375rem -0.0625rem, rgba(0, 0, 0, 0.06) 0rem 0.125rem 0.25rem -0.0625rem;
 }
 
 .navbarActive,
@@ -41,7 +45,7 @@ nav {
 .navbarActive li a:hover::after,
 .navbar li a:active::after,
 .navbar li a:hover::after {
-  content: "";
+  content: '';
   width: 30%;
   height: 2px;
   background: #17cf97;
@@ -91,8 +95,7 @@ nav {
   }
 }
 
-
 .content {
-  height: calc(100vh - 64px);
+  height: calc(100vh - 72px);
   overflow-y: auto;
 }

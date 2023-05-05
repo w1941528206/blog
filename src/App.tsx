@@ -12,7 +12,7 @@ export const App = () => {
   const locale = localStorage.getItem('locale') ?? defaultLocal;
   const messages = React.useMemo(() => locales[locale], [locale]);
 
-  const Loading = () => <span>loading...</span>
+  const Loading = () => <span>loading...</span>;
 
   const Page = React.lazy(() => import('./Page'));
 
